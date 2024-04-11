@@ -1,0 +1,32 @@
+
+<div class="game-board">
+  {{#each this.cells as |player index|}}
+    <Cell @player={{player}} @index={{index}} @onClick={{this.cellClicked}} />
+  {{/each}}
+  <div class="next-player">Next Player: {{this.nextPlayer}}</div>
+  <div class="winner">{{this.winner}}</div>
+  <button {{on "click" this.restartGame}}>Restart</button>
+</div>
+
+
+<!-- app/components/game-board.hbs -->
+{{!-- <div class="game-board">
+  {{#each this.cells as |player index|}}
+    <Cell @player={{player}} @index={{index}} @onClick={{this.cellClicked}} />
+  {{/each}}
+  <div class="next-player">Next Player: {{this.nextPlayer}}</div>
+  {{#if this.winner}}
+    {{#unless (eq this.winner 'Draw')}}
+      <div class="winner">Winner is: {{this.winner}}</div>
+    {{else}}
+      <div class="winner">Draw</div>
+    {{/unless}}
+  {{/if}}
+  <button {{on "click" this.restartGame}}>Restart</button>
+</div> --}}
+
+
+
+
+
+
